@@ -9,18 +9,33 @@ app.use(express.static('public'))
 
 if (itemData){
   console.log("itemData imported successfully"),
-  console.log(itemData)
+  console.log(itemData["meats"])
 }
 
-// return the main page, using parameters and twitData.json array
+// return the main page
 app.get('/', function (req, res) {
+
   if(itemData) 
-     {res.status(200).render('homePage', {items: itemData})}
+     {res.status(200).render('homePage',
+     
+     {  
+      meatsItems: itemData["meats"],
+      veggiesItems: itemData["veggies"],
+      drinksItems: itemData["drinks"]
+      }
+    )
+  }
    else
      {next()}
 })
 
-// return the main page, using parameters and twitData.json array
+
+app.get('/category', function (req, res, next){
+     res.status(200).render('catMainPage')
+  }   
+)
+
+// return the main page, using parameters and itemData.json array
 app.get('/category/:key', function (req, res, next){
   var key = req.params.key
    if(itemData[key]) 
