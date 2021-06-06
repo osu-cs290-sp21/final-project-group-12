@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 })
 
 // return the main page, using parameters and twitData.json array
-app.get('/categories/:key', function (req, res, next){
+app.get('/category/:key', function (req, res, next){
   var key = req.params.key
    if(itemData[key]) 
      res.status(200).render('catPage', 
