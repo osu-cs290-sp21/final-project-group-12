@@ -1,0 +1,28 @@
+<main class="home-page">
+
+   <div class="title-container">
+        <h3>Specials<i class="fas fa-heart"></i></h3>
+    </div>
+
+    <div class="title-container">
+        <h3>Meats</h3>
+            {{#each items}}
+               {{> item}}
+             {{/each}}
+    </div>
+
+    <div class="title-container">
+        <h3>Veggies</h3>
+            {{#each items}}
+                {{> item}}
+            {{/each}}
+    </div>
+
+    <div class="title-container">
+        <h3>Drinks</h3>
+            {{#each items}}
+                {{> item}}
+            {{/each}}
+    </div>
+
+</main>

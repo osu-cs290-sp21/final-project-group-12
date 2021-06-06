@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Online Storefront</title>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.runtime.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+
+    <header>
+      <h1 class="site-title"><i class='fas fa-store-alt'></i>Online Store</h1>
+    </header>
+
+    <nav class="navbar">
+      <ul class="navlist">
+        <li class="navitem"><a href="/">Home</a><i class="fas fa-home"></i></li>
+        <li class="navitem"><a href="/category">Category</a></li>
+        <li class="navitem navbar-search">
+            <input type="text" id="navbar-search-input" placeholder="Search...">
+            <button type="button" id="navbar-search-button"><i class="fas fa-search"></i></button>
+          </li>
+        <li class="navitem right"><a href="/checkout">Checkout</a><i class='fas fa-shopping-cart'></i></li>
+      </ul>
+    </nav>
+
+    <main class="home-page">
+
+        <div class="title-container">
+            <h3>Specials<i class="fas fa-heart"></i></h3>
+        </div>
+
+        <div class="title-container">
+            <h3>Category 1</h3>
+        </div>
+
+        <div class="title-container">
+            <h3>Category 2</h3>
+        </div>
+
+        <div class="title-container">
+            <h3>Category 3</i></h3>
+        </div>
+
+    </main>
+
+  </body>
+</html>
