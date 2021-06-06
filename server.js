@@ -7,6 +7,16 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 
+// var hbs = exphbs.create({})
+
+// hbs.handlebars.registerHelper('times', function(n, block) {
+//     var accum = '';
+//     for(var i = 0; i < n; ++i)
+//         accum += block.fn(i);
+//     return accum;
+// })
+
+
 if (itemData){
   console.log("itemData imported successfully"),
   console.log(itemData["meats"])
