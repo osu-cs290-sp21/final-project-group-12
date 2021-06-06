@@ -15,7 +15,7 @@ if (itemData){
 // return the main page, using parameters and twitData.json array
 app.get('/', function (req, res) {
   if(itemData) 
-     {res.status(200).render('mainPage', {items: itemData})}
+     {res.status(200).render('homePage', {items: itemData})}
    else
      {next()}
 })
