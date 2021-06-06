@@ -34,6 +34,17 @@ app.get('/category/:key', function (req, res, next){
     }   
 )
 
+app.get('/checkout', function (req, res, next){
+    console.log("Checkout page requested")
+     res.status(200).render('checkoutPage', 
+        //{   
+            // serve the selected items data object here, somehow
+        //}
+      )
+     next()
+    }   
+)
+
 app.get('*', function (req, res, next) {
   res.status(404).render('404')
 })
