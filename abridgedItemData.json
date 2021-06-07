@@ -1,0 +1,70 @@
+{
+    "meats": [ {
+        "name": "Sliced Bologna",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Bologna_lunch_meat_style_sausage.JPG",
+        "priceDescription": "$6.25/pack(5oz)",
+        "priceUnit": "5 oz",
+        "price": 6.25
+        },
+        {       
+        "name": "Boneless skinless chicken breast",
+        "photo": "https://wiki.ubc.ca/images/a/a5/Tysons-no-antibiotics_%281%29.jpg",
+        "priceDescription": "$9.99/package(6oz)",
+        "priceUnit": "6 oz",
+        "price": 9.99
+        },    
+        {
+        "name": "Rib steak raw",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Rib-steak-raw-MCB.jpg",
+        "priceDescription": "$8.85/pack(6oz)",
+        "priceUnit": "6 oz",
+        "price": 8.85      
+        }
+    ],
+  
+    "veggies":  [ {
+        "name": "Broccoli",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/0/03/Broccoli_and_cross_section_edit.jpg",
+        "priceDescription": "$0.75/lb",
+        "priceUnit": "lb",
+        "price": 0.75
+        },
+        {       
+        "name": "Chayote",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Chayote_BNC.jpg",
+        "priceDescription": "$0.66/lb",
+        "priceUnit": "lb",
+        "price": 0.66
+        },    
+        {
+        "name": "Red Onion",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/9/93/ARS_red_onion.jpg",
+        "priceDescription": " $0.54/lb", 
+        "priceUnit": "lb",
+        "price": 0.54
+        }
+    ],
+  
+    "drinks": [ {
+        "name": "Water",
+        "photo": "https://i.stack.imgur.com/Bvvvi.jpg",
+        "priceDescription": "$1/bottle",
+        "priceUnit": "bottle",
+        "price": 1.00
+        },
+        {       
+        "name": "Coke",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coca-cola_50cl_can_-_Italia.jpg",
+        "priceDescription": "$1.50/bottle",
+        "priceUnit": "bottle",
+        "price": 1.50
+        },    
+        {
+        "name": "Gatorade",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Gatorade_185836.jpg",
+        "priceDescription": "$1.50/bottle", 
+        "priceUnit": "bottle",
+        "price": 1.50
+        }
+    ]
+}

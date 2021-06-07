@@ -1,5 +1,6 @@
 var port = process.env.PORT || 3000;
 var itemData = require('./itemData.json')
+var abridgedItemData = require('./abridgedItemData.json')
 var express = require('express')
 var app = express()
 var exphbs = require('express-handlebars');
@@ -29,9 +30,9 @@ app.get('/', function (req, res) {
      {res.status(200).render('homePage',
      
      {  
-      meatsItems: itemData["meats"],
-      veggiesItems: itemData["veggies"],
-      drinksItems: itemData["drinks"]
+      meatsItems: abridgedItemData["meats"],
+      veggiesItems: abridgedItemData["veggies"],
+      drinksItems: abridgedItemData["drinks"]
       }
     )
   }
