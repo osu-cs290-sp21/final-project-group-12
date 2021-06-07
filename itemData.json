@@ -3,6 +3,7 @@
         "name": "Sliced Bologna",
         "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Bologna_lunch_meat_style_sausage.JPG",
         "priceDescription": "$6.25/pack(5oz)",
+        "timeURL": "/category/slicedbologna",
         "priceUnit": "5 oz",
         "price": 6.25
         },
@@ -21,8 +22,8 @@
         "price": 8.85      
         },
         {
-        "name": "Spam",
-        "photo": "https://simple.wikipedia.org/wiki/Spam_(food)#/media/File:Spam_2.jpg",
+        "name": "Low-Sodium Spam",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/3/37/Spam_2.jpg",
         "priceDescription": "$3.25/can",
         "priceUnit": "can",
         "price": 3.25
