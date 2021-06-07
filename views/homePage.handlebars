@@ -1,7 +1,14 @@
 <main class="home-page">
 
    <div class="title-container">
-        <h3>Specials<i class="fas fa-heart"></i></h3>
+         <div class="specials-container">
+            <h3>Specials</h3>
+             {{#each specialItems}}
+               {{> item}}
+             {{/each}}
+
+         </div>
+
     </div>
 
     <div class="title-container">

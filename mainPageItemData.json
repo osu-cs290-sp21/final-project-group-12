@@ -1,4 +1,26 @@
 {
+    "specials": [ {
+        "name": "Rib steak raw",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Rib-steak-raw-MCB.jpg",
+        "priceDescription": "$8.85/pack(6oz)",
+        "priceUnit": "6 oz",
+        "price": 8.85   
+        },
+        {
+        "name": "Tomatoes",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/1/10/Tomates_cerises_Luc_Viatour.jpg",
+        "priceDescription": " $0.68/lb", 
+        "priceUnit": "lb",
+        "price": 0.68               
+        },
+        {
+        "name": "Minute Maid",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e9/MinuteMaidPulpy_1000ml_Indonesia.jpg",
+        "priceDescription": " $1.99/bottle", 
+        "priceUnit": "bottle",
+        "price": 1.99
+        }
+    ],
     "meats": [ {
         "name": "Sliced Bologna",
         "photo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Bologna_lunch_meat_style_sausage.JPG",

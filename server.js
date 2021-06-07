@@ -1,6 +1,6 @@
 var port = process.env.PORT || 3000;
 var itemData = require('./itemData.json')
-var abridgedItemData = require('./abridgedItemData.json')
+var mainPageItemData = require('./mainPageItemData.json')
 var express = require('express')
 var app = express()
 var exphbs = require('express-handlebars');
@@ -8,14 +8,6 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 
-// var hbs = exphbs.create({})
-
-// hbs.handlebars.registerHelper('times', function(n, block) {
-//     var accum = '';
-//     for(var i = 0; i < n; ++i)
-//         accum += block.fn(i);
-//     return accum;
-// })
 
 
 if (itemData){
@@ -30,9 +22,10 @@ app.get('/', function (req, res) {
      {res.status(200).render('homePage',
      
      {  
-      meatsItems: abridgedItemData["meats"],
-      veggiesItems: abridgedItemData["veggies"],
-      drinksItems: abridgedItemData["drinks"]
+      specialItems: mainPageItemData["specials"],
+      meatsItems: mainPageItemData["meats"],
+      veggiesItems: mainPageItemData["veggies"],
+      drinksItems: mainPageItemData["drinks"]
       }
     )
   }
