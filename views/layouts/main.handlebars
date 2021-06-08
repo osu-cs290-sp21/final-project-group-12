@@ -3,12 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Online Storefront</title>
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.runtime.js"></script>
+    
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css" media="screen">
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.runtime.js"></script>
+    <script src="/index.js" charset="utf-8" defer></script> 
     <script src="/itemTemplate.js" charset="utf-8" defer></script>
-    <!-- <script src="/index.js" charset="utf-8" defer></script> -->
+    <script src="/cartitemTemplate.js" charset="utf-8"> defer</script>
+
   </head>
   <body>
 
@@ -18,13 +22,13 @@
 
     <nav class="navbar">
       <ul class="navlist">
-        <li class="navitem"><a href="/">Home</a><i class="fas fa-home"></i></li>
+        <li class="navitem"><a href="/"><i class="fas fa-home"></i> Home</a></i></li>
         <li class="navitem"><a href="/category">Category</a></li>
         <li class="navitem navbar-search">
             <input type="text" id="navbar-search-input" placeholder="Search...">
             <button type="button" id="navbar-search-button"><i class="fas fa-search"></i></button>
           </li>
-        <li class="navitem right"><a href="/checkout">Checkout</a><i class='fas fa-shopping-cart'></i></li>
+        <li class="navitem right"><a href="/checkout"><i class='fas fa-shopping-cart'></i> Checkout</a></i></li>
       </ul>
     </nav>
 
