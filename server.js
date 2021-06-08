@@ -1,13 +1,25 @@
-var port = process.env.PORT || 3000;
-var itemData = require('./itemData.json')
-var mainPageItemData = require('./mainPageItemData.json')
 var express = require('express')
+var exphbs = require('express-handlebars')
+var fs = require('fs')
+var mainPageItemData = require('./mainPageItemData.json')
+var itemData = require('./itemData.json')
+var cartData = require('./cartData.json')
 var app = express()
-var exphbs = require('express-handlebars');
+var port = process.env.PORT || 3000;
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+app.use(express.json())
 app.use(express.static('public'))
 
+
+
+//
+//var mongoose = require('mongoose')
+//mongoose.connect
+
+
+
+//
 
 
 if (itemData){
@@ -41,7 +53,7 @@ app.get('/category', function (req, res, next){
 
 // return the main page, using parameters and itemData.json array
 app.get('/category/:key', function (req, res, next){
-  var key = req.params.key
+  var key = req.params.key.toLowerCase();
    if(itemData[key]) 
      res.status(200).render('catPage', 
         {   
@@ -52,17 +64,56 @@ app.get('/category/:key', function (req, res, next){
      {next()}
     }   
 )
+//create datafile
+/*app.post('/category/:key', function (req, res, next)){})*/
+app.post('/category/:key', function (req, res, next) {
+  console.log("== req.body:", req.body)
+    var key = req.params.key.toLowerCase();
+    if (req.body && req.body.img && req.body.title && req.body.priceDescription && req.body.price && req.body.amount && req.body.priceUnit) {
+    if (itemData[key]) {
+      //console.log("smth");
+      cartData.push({
+        img: req.body.img,
+        title: req.body.title,
+	      priceDescription: req.body.priceDescription,
+	      price: req.body.price,
+	      amount: req.body.amount,
+        priceUnit: req.body.priceUnit,
+      })
+      console.log(cartData)
+      fs.writeFile(
+        __dirname + '/cartData.json',
+        JSON.stringify(cartData, null, 2),
+        function (err) {
+          if (err) {
+            res.status(500).send("Error writing new data.  Try again later.")
+          } else {
+            res.status(200).send()
+          }
+        }
+      )
+    } else {
+      next()
+    }
+  } else {
+    console.log(req.body && req.body.img && req.body.title && req.body.priceDescription && req.body.price && req.body.amount && req.body.priceUnit)
+    res.status(400).send("Request needs a JSON body with smth missing." )
+  }
+})
 
 app.get('/checkout', function (req, res, next){
     console.log("Checkout page requested")
-     res.status(200).render('checkoutPage', 
-        //{   
-            // serve the selected items data object here, somehow
-        //}
+          //var key = req.params.key.toLowerCase();
+          if(cartData)  
+            res.status(200).render('checkoutPage', 
+               {   
+                   cartData
+               }
+             )
+          else
+            {next()}
+           }
       )
-     next()
-    }   
-)
 
 app.get('*', function (req, res, next) {
   res.status(404).render('404')
