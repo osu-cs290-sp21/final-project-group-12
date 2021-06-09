@@ -1,3 +1,24 @@
+  {
+      console.log("A search button has been clicked")
+      var input = document.getElementById('navbar-search-input').value.toLowerCase()
+      if (input) string = input.toLowerCase();
+      var y = document.getElementsByClassName('item-name') 
+
+
+      var container = document.getElementsByClassName('item')
+      for (i = 0; i < y.length; i++) { 
+          if (!y[i].innerHTML.toLowerCase().includes(input)) {
+              /* container.classList.remove(x[i].parentNode.parentNode) */
+              y[i].parentNode.parentNode.classList.add('hidden')
+
+          }
+          else {
+              y[i].parentNode.parentNode.classList.remove('hidden')
+
+          }
+      }
+  } 
+  )
 /*
  * This function gets the Person ID from the current URL.  For example, if the
  * current URL path is  "/people/luke", this function will return "luke".
