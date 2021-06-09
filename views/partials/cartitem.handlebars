@@ -5,7 +5,7 @@
     </div>
     
     <div class="cart-description" >
-        <p class="cart-item-name" id="cart-item-title">
+        <p class="cart-item-title" id="cart-item-title">
             {{title}}
         </p>
     </div>
@@ -24,6 +24,7 @@
 
     <div>
         <p class="cart-item-price-uint" id="cat-item-price-unit">
+
             {{priceUnit}}
         </p>
     </div>
@@ -33,12 +34,13 @@
         {{amount}}
     </div>
             <!-- <label for="item-quantity">adjust quantity</label> -->
-            <select id="item-quantity" class="quantity">
+            <select id="cart-item-quantity" class="cart-item-quantity">
+              <option value="" selected disabled hidden>{{amount}}</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
             </select>
             <!-- <label for="item-img"></label> -->
-            <button type="submit" value="Submit" id="submit-button" class="submit-button">adjust quantity </button>
-            <button> delete item</button>
+            <!--<button type="submit" value="Submit" id="adjust-submit-button" class="adjust-submit-button">adjust quantity</button>-->
+            <button type="suvmit" value="submit" id="delete-submit-button" class="delete-submit-button">delete item</button>
 </section>
