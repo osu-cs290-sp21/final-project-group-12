@@ -27,6 +27,36 @@
         "priceDescription": "$3.25/can",
         "priceUnit": "can",
         "price": 3.25
+        },
+        {
+        "name": "Meat Balls",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/a/ae/20090105ikea_meatballs.jpg",
+        "priceDescription": "$5/pack(7oz)",
+        "priceUnit": "7 oz",
+        "price": 5
+        },
+        {
+        "name": "Cooked Bacon",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/3/36/CookedBacon.jpg",
+        "priceDescription": "$5/pack(6oz)",
+        "priceUnit": "6 oz",
+        "price": 5
+        }
+        ,
+        {
+        "name": "Tomahawk Pork",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/d/df/Tomahawk_Pork_Chop_from_Netherlands.jpg",
+        "priceDescription": "$8/pack(6oz)",
+        "priceUnit": "8 oz",
+        "price": 8
+        }
+        ,
+        {
+        "name": "Chicken Thigh",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Raw_chicken_thighs.jpg",
+        "priceDescription": "$4/pack(6oz)",
+        "priceUnit": "6 oz",
+        "price": 4
         }
     ],
   
@@ -64,6 +94,43 @@
         "priceDescription": " $0.68/lb", 
         "priceUnit": "lb",
         "price": 0.68               
+        },
+        {
+        "name": "Spinach",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/e/ea/774Spinach_leaves_06.jpg",
+        "priceDescription": " $0.5/lb", 
+        "priceUnit": "lb",
+        "price": 0.5
+        },
+        {
+        "name": "Lettuce",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Lettuce_in_a_stack.jpg",
+        "priceDescription": " $0.3/lb", 
+        "priceUnit": "lb",
+        "price": 0.3
+        },
+        {
+        "name": "Cabbage",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/9/9e/A_large_cabbage.jpg",
+        "priceDescription": " $1/lb", 
+        "priceUnit": "lb",
+        "price": 1
+        }
+        ,
+        {
+        "name": "Carrot",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/2/22/Carrots_at_a_farmers_market_in_the_Villages_Florida.png",
+        "priceDescription": " $1/lb", 
+        "priceUnit": "lb",
+        "price": 1
+        }
+        ,
+        {
+        "name": "Garlic",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/e/e5/GarlicBasket.jpg",
+        "priceDescription": " $0.7/lb", 
+        "priceUnit": "lb",
+        "price": 0.7
         }
     ],
   
@@ -94,6 +161,38 @@
         "priceDescription": " $1.99/bottle", 
         "priceUnit": "bottle",
         "price": 1.99
+        }
+         ,      
+        {
+        "name": "Pepsi",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/d/dc/2019-02-26_12_58_50_A_can_of_Pepsi_in_the_Dulles_section_of_Sterling%2C_Loudoun_County%2C_Virginia.jpg",
+        "priceDescription": " $1.50/can", 
+        "priceUnit": "can",
+        "price": 1.50
+        }
+        ,
+        {
+        "name": "Grean Tea",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/a/af/Flickr_-_cyclonebill_-_Grøn_te_%281%29.jpg",
+        "priceDescription": " $1.50/bottle", 
+        "priceUnit": "bottle",
+        "price": 1.50
+        }
+        ,
+        {
+        "name": "Naked Mango Juice",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Naked_Juice_in_cooler.jpg",
+        "priceDescription": " $1.75/bottle", 
+        "priceUnit": "bottle",
+        "price": 1.75
+        }
+        ,
+        {
+        "name": "Milk",
+        "photo": "https://upload.wikimedia.org/wikipedia/commons/2/28/Milk_001.JPG",
+        "priceDescription": " $1.00/bottle", 
+        "priceUnit": "bottle",
+        "price": 1.00
         }
     ]
 }
