@@ -74,11 +74,11 @@ function handleSubmitButtonClick() {
   function handleAdjustButtonClick()
   {
 
-    var amount = document.getElementById('cart-item-quantity').innerText;
+    var amount = document.getElementById('cart-item-quantity').value;
     var title = document.getElementById('cart-item-title').innerText; 
 
     var req = new XMLHttpRequest()
-    var reqUrl = '/category/' + getPersonIdFromURL() /*+ '/addItem'*/
+    var reqUrl = 'http://localhost:3000/checkout' /*+ '/addItem'*/
     console.log("== reqUrl:", reqUrl)
     req.open('POST', reqUrl /*, true*/)
 
@@ -87,7 +87,7 @@ function handleSubmitButtonClick() {
       title: title
     }
 
-    var reqBody = JSON.stringify(amount)
+    var reqBody = JSON.stringify(toAdjust)
     console.log("== reqBody:", reqBody)
     console.log("== typeof(reqBody):", typeof(reqBody))
 
@@ -99,25 +99,25 @@ function handleSubmitButtonClick() {
 
   function handleDeleteButtonClick()
   {
-    var amount = document.getElementById('cart-item-quantity').innerText;
+    var amount = document.getElementById('cart-item-quantity').value;
     var title = document.getElementById('cart-item-title').innerText;
     var req = new XMLHttpRequest()
-    var reqUrl = '/category/' + getPersonIdFromURL() /*+ '/addItem'*/
+    var reqUrl = '/checkout' /*+ '/addItem'*/
     console.log("== reqUrl:", reqUrl)
     req.open('POST', reqUrl)
 
-    var toAdjust = {
+    var toDelete = {
       amount: amount,
       title: title
     }
 
-    var reqBody = JSON.stringify(title)
-    console.log("== reqBody:", reqBody)
-    console.log("== typeof(reqBody):", typeof(reqBody))
+    var reqB = JSON.stringify(toDelete)
+    console.log("== reqBody:", reqB)
+    console.log("== typeof(reqBody):", typeof(reqB))
 
     req.setRequestHeader('Content-Type', 'application/json')
    
-    req.send(reqBody)
+    req.send(reqB)
   }
 
   /*var addToCartButton = document.getElementById('submit-button');
@@ -219,19 +219,19 @@ var allItems = []
         addToCartButton.addEventListener('click', handleSubmitButtonClick)
     //console.log("submit clicked");
     }*/
-    var adjustButton = document.querySelector(".adjust-submit-button");
+    var adjustButton = document.querySelectorAll(".cart-item-quantity");
     //var ab= document.getElementById('adjust-submit-button').innerText;
     //var title = document.getElementById('cart-item-title').innerText;
     //ab.onclick = handleAdjustButtonClick;
     var j=0;
-    for ( j; j < adjustButton; j++) {
+    for ( j; j < adjustButton.length; j++) {
       adjustButton[j].onchange = handleAdjustButtonClick;}
 
 
-    var deleteButton = document.querySelector(".delete-submit-button");
+    var deleteButton = document.querySelectorAll(".delete-submit-button");
     var k=0;
-    for ( k; k < deleteButton; k++) {
-      deleteButton[k].onclick = handleDeleteButtonClick;}
+    for ( k; k < deleteButton.length; k++) {
+      deleteButton[k].onclick = handleDeleteButtonClick; }
     
 
   })
