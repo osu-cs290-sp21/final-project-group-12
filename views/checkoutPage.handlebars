@@ -1,15 +1,23 @@
 <main class = "checkout-page">
     <h3>Your cart:</h3>
     <div class = "cart-item-container" id ="cart-item-container" >
-     {{#each cartitems}}
+     {{#each cartData}}
         {{>cartitem}}
+        
     {{/each}}
     </div>
 
     <div class = "checkout-footer">
 
         <h3>Your checkout total:</h3>
+        <h2>Your checkout total:</h2>
         <div class = "checkout-total"> <!-- total --> </div>
-        <button type="button" id="checkout-button"><i class= CHECKOUTBUTTONPLACEHOLDER ></i></button>
+        <!-- <a href="/thank"></a>
+        <button type="button" id="checkout-button"><i class= CHECKOUTBUTTONPLACEHOLDER ></i>Place Order</button> -->
+
+        <form action="/thank">
+    <input type="submit" value="place order" />
+        </form>
+        </a>
     </div>
 </main>
