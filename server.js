@@ -120,17 +120,40 @@ app.post('/checkout', function (req, res, next){
   console.log("== req.body:", req.body)
   if (req.body && req.body.title && req.body.amount){
 
+    console.log(req.body && req.body.title && req.body.amount)
     var itemTitle = req.body.title;
     var itemAmount = req.body.amount;
     var titleField = title;
-    var amountField = amount
-    function replaceByValue( titleField, itemTitle, itemAmount, amountField  ) {
+    var amountField = amount //unknown var?
       for( var k = 0; k < cartData.length; ++k ) {
           if(  itemTitle == cartData[k][titleField] ) {
               cartData[k][amountField] = itemAmount ;
           }
         }
-      }}
+      }
+    //}
+
+//var data = fs.readFileSync(cartData);
+//var json = JSON.parse(data);
+//fs.writeFileSync('cartdata, JSON.stringify(json, null, 2));
+
+  else if (req.b && req.b.title && req.b.amount){
+    var itemTitle = req.b.title;
+    var itemAmount = req.b.amount;
+    var titleField = title;
+    var amountField = amount
+    var i=0;
+
+    let editedDataBase = JSON.stringify(ReadData, null, 2);
+    fs.writeFileSync('database.json', editedDataBase);
+
+  for (i ;i< cartData.entries().length; i++) {
+    if (cartData.title == "itemTitle") {
+        cartData.splice(i, 1);
+        //delete carttData[i];
+    }
+ }
+}
   else {next()}
 })
 
@@ -148,6 +171,8 @@ app.get('/thank', function(req,res,next){
           for (i ; i<cartData.length; i++)
           console.log("datalength ==", cartData.length)
               {cartData.splice} }*/
+              res.status(200).render('thankPage');
+              return;
               var cartDota =  [/*{
                 img: "",
                 title: "",
@@ -163,7 +188,7 @@ app.get('/thank', function(req,res,next){
                 function (err) {
                   if (err) {
                     res.status(500).send("Error writing new data.  Try again later.")
-                  } else {
+                  } else { //
                     res.status(200).send()
                   }
                 }
