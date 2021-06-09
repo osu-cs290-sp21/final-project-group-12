@@ -1,4 +1,4 @@
-<section class="cartItem-container">
+<section class="cartItem-container" id="cartItem-container">
 
     <div class="cart-img-container" >
         <img class="cart-item-img" id="cart-item-img" src="{{img}}"/>
@@ -32,5 +32,13 @@
         <p class="cart-item-quantity" id="cart-item-quantity"></p>
         {{amount}}
     </div>
-
+            <!-- <label for="item-quantity">adjust quantity</label> -->
+            <select id="item-quantity" class="quantity">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+            </select>
+            <!-- <label for="item-img"></label> -->
+            <button type="submit" value="Submit" id="submit-button" class="submit-button">adjust quantity </button>
+            <button> delete item</button>
 </section>
