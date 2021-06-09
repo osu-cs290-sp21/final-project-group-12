@@ -42,28 +42,7 @@ function handleSubmitButtonClick() {
     console.log("== typeof(reqBody):", typeof(reqBody))
 
     req.setRequestHeader('Content-Type', 'application/json')
-
-    //req.send(reqBody)
-    //console.log("== reqBody2:", reqBody)
-    //console.log("== typeof(reqBody2):", typeof(reqBody))
-    
-    req.addEventListener('load', function (event) {
-      console.log("1apples");
-      /*document.addEventListener("DOMContentLoaded", function(event) {*/
-        /*window.onload = function(){*/
-        console.log("2apples");
-      if (event.target.status === 200) {
-        var cartitemTemplate = Handlebars.templates.cartitem;
-        var newcartTemplatHTML = cartitemTemplate(cartItem);
-        console.log("3apples");
-        var cartTemplatContainer = document.querySelector(".cart-item-container");
-        cartTemplatContainer.insertAdjacentHTML('beforeend', newcartTemplatHTML);
-      } else {
-        alert("Failed to add item to cart; error:\n\n" + event.target.response)
-      }
-    //}
-    }); /*});*/
-    
+   
     req.send(reqBody)
 
   }
@@ -77,6 +56,17 @@ function handleSubmitButtonClick() {
   ////
 var allItems = []
 
+
+
+
+
+
+
+
+
+
+
+
   window.addEventListener('DOMContentLoaded', function () {
 /*
   var itemElemsCollection = document.getElementsByClassName('item');
@@ -86,17 +76,67 @@ var allItems = []
     {
         addToCartButton.addEventListener('click', handleSubmitButtonClick)
     }
-  }*/
+  */
 
-  var buttons = document.querySelectorAll(".submit-button");
+    var buttons = document.querySelectorAll(".submit-button");
+  var i=0;
+  for ( i; i < buttons.length; i++) {
+           // if (onclick.buttons[i]){
+      buttons[i].onclick = handleSubmitButtonClick();
+        
+      /*///
+      buttons[i].addEventListener("click", function()
+      {
+        var img = document.querySelectorAll('.item-img').src;
+        console.log(img);
+        var title = document.querySelectorAll('.item-name').innerText;
+        var priceDescription = document.querySelectorAll('.item-price-desc').innerText;
+        var priceo = document.querySelectorAll('.item-price-desc');
+        //var price = priceo.getAttribute("name");
+        var amount = document.querySelectorAll('.quantity').value;
+        var priceUnito = document.querySelectorAll('.item-title');
+        //var priceUnit = priceUnito.getAttribute("name")
 
-  for (i=0; i < buttons.length; i++) {
-      if (document.addEventListener) {
-          buttons[i].addEventListener("click", handleSubmitButtonClick);
-      } else {
-          buttons[i].attachEvent("onclick", handleSubmitButtonClick);
-      };
-  };
+        var imgi = img[i];
+        var titlei = title[i];
+        var priceDescriptioni = priceDescription[i];
+        var priceUnit = priceo[i].getAttribute("name");
+        var amounti = amount[i];
+        var priceUniti= priceUnito[i].getAttribute("name");
+        
+
+        var req = new XMLHttpRequest()
+        var reqUrl = '/category/' + getPersonIdFromURL() 
+        console.log("== reqUrl:", reqUrl)
+        req.open('POST', reqUrl )
+    
+        var cartItem = {
+          img: imgi,
+          title: titlei,
+          priceDescription: priceDescriptioni,
+          price: pricei,
+          amount: amounti,
+          priceUnit: priceUniti,
+        }
+        var reqBody = JSON.stringify(cartItem)
+        console.log("== reqBody:", reqBody)
+        console.log("== typeof(reqBody):", typeof(reqBody))
+    
+        req.setRequestHeader('Content-Type', 'application/json')
+       
+        req.send(reqBody)
+      }, false);
+    }*////////////////////////
+
+        //buttons[i].onclick = handleSubmitButtonClick;}
+        //buttons[i].preventDefault(); }
+    /*if (document.addEventListener) {
+        buttons[i].addEventListener("click", handleSubmitButtonClick);
+
+    } else {
+       buttons[i].attachEvent("onclick", handleSubmitButtonClick);
+    };
+}*/
     /*var addToCartButton = document.getElementById('submit-button');
     if (addToCartButton)
     {
@@ -105,4 +145,5 @@ var allItems = []
     //console.log("submit clicked");
     }*/
 
-  });
+
+  }})
