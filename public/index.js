@@ -1,24 +1,3 @@
-  {
-      console.log("A search button has been clicked")
-      var input = document.getElementById('navbar-search-input').value.toLowerCase()
-      if (input) string = input.toLowerCase();
-      var y = document.getElementsByClassName('item-name') 
-
-
-      var container = document.getElementsByClassName('item')
-      for (i = 0; i < y.length; i++) { 
-          if (!y[i].innerHTML.toLowerCase().includes(input)) {
-              /* container.classList.remove(x[i].parentNode.parentNode) */
-              y[i].parentNode.parentNode.classList.add('hidden')
-
-          }
-          else {
-              y[i].parentNode.parentNode.classList.remove('hidden')
-
-          }
-      }
-  } 
-  )
 /*
  * This function gets the Person ID from the current URL.  For example, if the
  * current URL path is  "/people/luke", this function will return "luke".
@@ -85,10 +64,11 @@ var allItems = []
 
 
 
-
-
-
   window.addEventListener('DOMContentLoaded', function () {
+
+   // var checkOutButton = document.getElementById("checkout-button");
+    //checkOutButton.onclick = handleSubmitButtonClick();
+
 /*
   var itemElemsCollection = document.getElementsByClassName('item');
   for (var i = 0; i < itemElemsCollection.length; i++) {
@@ -103,10 +83,9 @@ var allItems = []
   var i=0;
   for ( i; i < buttons.length; i++) {
            // if (onclick.buttons[i]){
-      buttons[i].onclick = handleSubmitButtonClick();
+      buttons[i].onclick = handleSubmitButtonClick;
         
-      /*///
-      buttons[i].addEventListener("click", function()
+     /* buttons[i].addEventListener("click", function()
       {
         var img = document.querySelectorAll('.item-img').src;
         console.log(img);
@@ -147,7 +126,8 @@ var allItems = []
        
         req.send(reqBody)
       }, false);
-    }*////////////////////////
+    }*/
+    ////////////////////////
 
         //buttons[i].onclick = handleSubmitButtonClick;}
         //buttons[i].preventDefault(); }
