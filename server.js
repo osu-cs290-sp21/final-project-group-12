@@ -108,12 +108,35 @@ app.get('/checkout', function (req, res, next){
             res.status(200).render('checkoutPage', 
                {   
                    cartData: cartData,
+
+                   
                }
              )
-          else
-            {next()}
-           }
-      )
+    else {next()}
+
+    })
+
+app.post('/checkout', function (req, res, next){
+  console.log("== req.body:", req.body)
+  if (req.body && req.body.title && req.body.amount){
+
+    var itemTitle = req.body.title;
+    var itemAmount = req.body.amount;
+    var titleField = title;
+    var amountField = amount
+    function replaceByValue( titleField, itemTitle, itemAmount, amountField  ) {
+      for( var k = 0; k < cartData.length; ++k ) {
+          if(  itemTitle == cartData[k][titleField] ) {
+              cartData[k][amountField] = itemAmount ;
+          }
+        }
+      }}
+  else {next()}
+})
+
+/*app.post('/checkout', function (req, res, next){
+
+})*/
 
 app.get('/thank', function(req,res,next){
         //res.status(200).render('thankPage');
@@ -150,7 +173,6 @@ app.get('/thank', function(req,res,next){
 
 app.get('/thanks', function (req, res) {
   res.status(200).render('thankPage'); 
-  //window.location.href = 'http://www.google.com';
 })
 
 
