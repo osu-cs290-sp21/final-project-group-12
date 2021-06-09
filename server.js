@@ -4,6 +4,7 @@ var fs = require('fs')
 var mainPageItemData = require('./mainPageItemData.json')
 var itemData = require('./itemData.json')
 var cartData = require('./cartData.json')
+const { networkInterfaces } = require('os')
 var app = express()
 var port = process.env.PORT || 3000;
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
@@ -102,18 +103,56 @@ app.post('/category/:key', function (req, res, next) {
 })
 
 app.get('/checkout', function (req, res, next){
-    console.log("Checkout page requested")
-          //var key = req.params.key.toLowerCase();
+    console.log("Checkout page requested");
           if(cartData)  
             res.status(200).render('checkoutPage', 
                {   
-                   cartData
+                   cartData: cartData,
                }
              )
           else
             {next()}
            }
       )
+
+app.get('/thank', function(req,res,next){
+        //res.status(200).render('thankPage');
+          //var data = fs.readFileSync(cartData);
+          //var json = JSON.parse(cartData);
+          //while(json.length()>0)
+          //json.remove(json.next());
+          /*var i = 0;
+          for (i ; i<cartData.length; i++)
+          console.log("datalength ==", cartData.length)
+              {cartData.splice} }*/
+              var cartDota =  [/*{
+                img: "",
+                title: "",
+                priceDescription: "",
+                price: "",
+                amount: "",
+                priceUnit: "",
+              }*/]
+
+              fs.writeFile(
+                __dirname + '/cartData.json',
+                JSON.stringify(cartDota, null, 2),
+                function (err) {
+                  if (err) {
+                    res.status(500).send("Error writing new data.  Try again later.")
+                  } else {
+                    res.status(200).send()
+                  }
+                }
+              )
+              //console.log(window.location.assign( 'http://localhost:3000/thanks'));
+})
+
+app.get('/thanks', function (req, res) {
+  res.status(200).render('thankPage'); 
+  //window.location.href = 'http://www.google.com';
+})
+
 
 app.get('*', function (req, res, next) {
   res.status(404).render('404')
