@@ -1,5 +1,28 @@
-/*
- * This function gets the Person ID from the current URL.  For example, if the
+
+ document.getElementById('navbar-search-button').addEventListener('click', function()
+  {
+      console.log("A search button has been clicked")
+      var input = document.getElementById('navbar-search-input').value.toLowerCase()
+      if (input) string = input.toLowerCase();
+      var y = document.getElementsByClassName('item-name') 
+
+
+      var container = document.getElementsByClassName('item')
+      for (i = 0; i < y.length; i++) { 
+          if (!y[i].innerHTML.toLowerCase().includes(input)) {
+              /* container.classList.remove(x[i].parentNode.parentNode) */
+              y[i].parentNode.parentNode.classList.add('hidden')
+
+          }
+          else {
+              y[i].parentNode.parentNode.classList.remove('hidden')
+
+          }
+      }
+  } 
+  )
+
+/* This function gets the Person ID from the current URL.  For example, if the
  * current URL path is  "/people/luke", this function will return "luke".
  */
 function getPersonIdFromURL() {
@@ -47,6 +70,56 @@ function handleSubmitButtonClick() {
 
   }
 
+
+  function handleAdjustButtonClick()
+  {
+
+    var amount = document.getElementById('cart-item-quantity').innerText;
+    var title = document.getElementById('cart-item-title').innerText; 
+
+    var req = new XMLHttpRequest()
+    var reqUrl = '/category/' + getPersonIdFromURL() /*+ '/addItem'*/
+    console.log("== reqUrl:", reqUrl)
+    req.open('POST', reqUrl /*, true*/)
+
+    var toAdjust = {
+      amount: amount,
+      title: title
+    }
+
+    var reqBody = JSON.stringify(amount)
+    console.log("== reqBody:", reqBody)
+    console.log("== typeof(reqBody):", typeof(reqBody))
+
+    req.setRequestHeader('Content-Type', 'application/json')
+   
+    req.send(reqBody)
+  }
+
+
+  function handleDeleteButtonClick()
+  {
+    var amount = document.getElementById('cart-item-quantity').innerText;
+    var title = document.getElementById('cart-item-title').innerText;
+    var req = new XMLHttpRequest()
+    var reqUrl = '/category/' + getPersonIdFromURL() /*+ '/addItem'*/
+    console.log("== reqUrl:", reqUrl)
+    req.open('POST', reqUrl)
+
+    var toAdjust = {
+      amount: amount,
+      title: title
+    }
+
+    var reqBody = JSON.stringify(title)
+    console.log("== reqBody:", reqBody)
+    console.log("== typeof(reqBody):", typeof(reqBody))
+
+    req.setRequestHeader('Content-Type', 'application/json')
+   
+    req.send(reqBody)
+  }
+
   /*var addToCartButton = document.getElementById('submit-button');
   if (addToCartButton)
   {
@@ -83,7 +156,8 @@ var allItems = []
   var i=0;
   for ( i; i < buttons.length; i++) {
            // if (onclick.buttons[i]){
-      buttons[i].onclick = handleSubmitButtonClick;
+      buttons[i].onclick = handleSubmitButtonClick; }
+    
         
      /* buttons[i].addEventListener("click", function()
       {
@@ -145,6 +219,19 @@ var allItems = []
         addToCartButton.addEventListener('click', handleSubmitButtonClick)
     //console.log("submit clicked");
     }*/
+    var adjustButton = document.querySelector(".adjust-submit-button");
+    //var ab= document.getElementById('adjust-submit-button').innerText;
+    //var title = document.getElementById('cart-item-title').innerText;
+    //ab.onclick = handleAdjustButtonClick;
+    var j=0;
+    for ( j; j < adjustButton; j++) {
+      adjustButton[j].onchange = handleAdjustButtonClick;}
 
 
-  }})
+    var deleteButton = document.querySelector(".delete-submit-button");
+    var k=0;
+    for ( k; k < deleteButton; k++) {
+      deleteButton[k].onclick = handleDeleteButtonClick;}
+    
+
+  })
